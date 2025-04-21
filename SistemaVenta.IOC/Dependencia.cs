@@ -5,6 +5,8 @@ using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Repositorio;
 using SistemaVenta.DAL.Repositorio.Contrato;
 using SistemaVenta.Utility;
+using SistemaVenta.BLL.Servicios.Contrato;
+using SistemaVenta.BLL.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +35,7 @@ namespace SistemaVenta.IOC
 
             ////agragamos las dependencias de los servicios o logica de negocio
             //services.AddScoped<IRolService, RolService>();
-            //services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
             //services.AddScoped<ICategoriaService, CategoriaService>();
             //services.AddScoped<IImagenProductoService, ImagenProductoService>();
             //services.AddScoped<IProductoService, ProductoService>();

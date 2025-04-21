@@ -21,7 +21,7 @@ namespace SistemaVenta.API.Controllers
 
         //devolvemos la lista de los usurios
         [HttpGet]
-        //[Authorize]//solo puede ver con el token
+        [Authorize]//solo puede ver con el token
         [Route("Lista")]
         public async Task<IActionResult> Lista()
         {
@@ -43,7 +43,7 @@ namespace SistemaVenta.API.Controllers
 
 
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         [Route("VerificarSesion")]
         public async Task<IActionResult> VerificarSesion()
         {
@@ -129,7 +129,7 @@ namespace SistemaVenta.API.Controllers
 
 
         [HttpPost]
-        //[Authorize]//solo puede ver con el token
+        [Authorize]//solo puede ver con el token
         [Route("Guardar")]
         public async Task<IActionResult> Guardar([FromBody] UsuarioDTO usuario)
         {
@@ -154,7 +154,7 @@ namespace SistemaVenta.API.Controllers
 
 
         [HttpPut]
-        //[Authorize]//solo puede ver con el token
+        [Authorize]//solo puede ver con el token
         [Route("Editar")]
         public async Task<IActionResult> Editar([FromBody] UsuarioDTO usuario)
         {
@@ -179,7 +179,7 @@ namespace SistemaVenta.API.Controllers
 
 
         [HttpPut]
-        //[Authorize]
+        [Authorize]
         [Route("ActualizarEstado/{id:int}")]
         public async Task<IActionResult> ActualizarEstado(int id, [FromBody] ActualizarEstadoRequestDTO request)
         {
@@ -201,7 +201,7 @@ namespace SistemaVenta.API.Controllers
 
 
         [HttpDelete]
-        //[Authorize]//solo puede ver con el token
+        [Authorize]//solo puede ver con el token
         [Route("Eliminar/{id:int}")]
         public async Task<IActionResult> Eliminar(int id)
         {

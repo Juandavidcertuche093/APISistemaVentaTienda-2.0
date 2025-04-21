@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SistemaVenta.DAL.DBContext;
+using SistemaVenta.DAL.Repositorio;
+using SistemaVenta.DAL.Repositorio.Contrato;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +23,9 @@ namespace SistemaVenta.IOC
             });
 
             ////Repositorios
-            //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            //services.AddScoped<IVentaRepository, VentaRepository>();
-            //services.AddScoped<ICompraRepository, CompraRepository>();
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IVentaRepository, VentaRepository>();
+            services.AddScoped<ICompraRepository, CompraRepository>();
 
             ////agregamos la dependencia de los mapeos
             //services.AddAutoMapper(typeof(AutoMapperProfile));

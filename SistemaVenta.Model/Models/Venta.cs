@@ -9,11 +9,11 @@ public partial class Venta
 
     public int? IdUsuario { get; set; }
 
-    public string NumVenta { get; set; } = null!;
+    public string? NumVenta { get; set; } = null!;
 
-    public string TipoPago { get; set; } = null!;
+    public string? TipoPago { get; set; } = null!;
 
-    public decimal Total { get; set; }
+    public decimal? Total { get; set; }
 
     public DateTime? FechaRegistro { get; set; }
 

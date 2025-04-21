@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Repositorio;
 using SistemaVenta.DAL.Repositorio.Contrato;
+using SistemaVenta.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace SistemaVenta.IOC
             services.AddScoped<ICompraRepository, CompraRepository>();
 
             ////agregamos la dependencia de los mapeos
-            //services.AddAutoMapper(typeof(AutoMapperProfile));
+            services.AddAutoMapper(typeof(AutoMapperProfile));
 
             ////agragamos las dependencias de los servicios o logica de negocio
             //services.AddScoped<IRolService, RolService>();

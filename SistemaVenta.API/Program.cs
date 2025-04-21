@@ -1,4 +1,8 @@
-﻿using SistemaVenta.IOC;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using SistemaVenta.IOC;
+using SistemaVenta.Utility.Authentication;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,30 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.InyectarDependencias(builder.Configuration);
 
+//utilizamos la clase utilidasde de se genera el token y se encripta la contraseña
+builder.Services.AddSingleton<jwtBearer>();
+
+//configuracio jwt
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(config =>
+{
+    config.RequireHttpsMetadata = false;
+    config.SaveToken = true;
+    config.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
+        IssuerSigningKey = new SymmetricSecurityKey
+        (Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"]!))
+    };
+});
+
 
 //implementar los CORS
 builder.Services.AddCors(options =>
@@ -18,7 +46,6 @@ builder.Services.AddCors(options =>
     options.AddPolicy("NewPolicy", policy =>
     {
         policy
-            .WithOrigins("http://localhost:4200") // 👈 origen específico
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials(); // 👈 permitir envío de credenciales

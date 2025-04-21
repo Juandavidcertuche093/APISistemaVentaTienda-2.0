@@ -1,0 +1,47 @@
+# Archivos de configuración sensibles
+**/appsettings.json
+**/appsettings.*.json
+**/secrets.json
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.VC.db
+
+# Archivos de solución temporales
+*.ncb
+*.log
+*.tlog
+*.pdb
+
+# Archivos de compilación
+bin/
+obj/
+out/
+
+# Archivos de publicación
+publish/
+*.publish.xml
+
+# Configuración de depuración
+launchSettings.json
+
+# Sistema de archivos de Rider o VS Code (si usas alguno)
+.idea/
+.vscode/
+
+# Archivos de SQLite o Copilot
+*.db-shm
+*.db-wal
+*.db
+
+# Paquetes NuGet descargados localmente
+*.nupkg
+packages/
+
+# Archivos específicos de Mac/Linux
+.DS_Store
+Thumbs.db

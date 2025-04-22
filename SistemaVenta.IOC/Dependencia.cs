@@ -34,7 +34,7 @@ namespace SistemaVenta.IOC
             services.AddAutoMapper(typeof(AutoMapperProfile));
 
             ////agragamos las dependencias de los servicios o logica de negocio
-            //services.AddScoped<IRolService, RolService>();
+            services.AddScoped<IRolService, RolService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             //services.AddScoped<ICategoriaService, CategoriaService>();
             //services.AddScoped<IImagenProductoService, ImagenProductoService>();

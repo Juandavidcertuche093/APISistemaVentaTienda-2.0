@@ -36,7 +36,7 @@ namespace SistemaVenta.IOC
             ////agragamos las dependencias de los servicios o logica de negocio
             services.AddScoped<IRolService, RolService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
-            //services.AddScoped<ICategoriaService, CategoriaService>();
+            services.AddScoped<ICategoriaService, CategoriaService>();
             //services.AddScoped<IImagenProductoService, ImagenProductoService>();
             //services.AddScoped<IProductoService, ProductoService>();
             //services.AddScoped<IVentaService, VentaService>();

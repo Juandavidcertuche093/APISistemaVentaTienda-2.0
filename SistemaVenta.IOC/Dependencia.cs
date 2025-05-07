@@ -45,7 +45,7 @@ namespace SistemaVenta.IOC
             services.AddScoped<IMenuService, MenuService>();
             services.AddScoped<IProveedorService, ProveedorService>();
             services.AddScoped<IProductoEmpaqueService, ProductoEmpaqueService>();
-            //services.AddScoped<IPresentacionService, PresentacionService>();
+            services.AddScoped<IPresentacionService, PresentacionService>();
         }
     }
 }

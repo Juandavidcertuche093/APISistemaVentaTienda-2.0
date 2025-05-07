@@ -43,7 +43,7 @@ namespace SistemaVenta.IOC
             //services.AddScoped<ICompraService, CompraService>();
             //services.AddScoped<IDashboardService, DashboardService>();
             services.AddScoped<IMenuService, MenuService>();
-            //services.AddScoped<IProveedorService, ProveedorService>();
+            services.AddScoped<IProveedorService, ProveedorService>();
             //services.AddScoped<IProductoEmpaqueService, ProductoEmpaqueService>();
             //services.AddScoped<IPresentacionService, PresentacionService>();
         }
